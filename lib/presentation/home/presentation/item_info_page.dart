@@ -5,9 +5,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:foodui/assets/app_icons.dart';
 import 'package:foodui/assets/colors.dart';
 import 'package:foodui/assets/images.dart';
-import 'package:foodui/presentation/home/map/view/map_view.dart';
+import 'package:foodui/presentation/home/map/view/map_witget.dart';
 import 'package:foodui/presentation/home/presentation/home_page.dart';
 import 'package:foodui/presentation/home/presentation/witget/add_ingredients.dart';
+import 'package:yandex_mapkit/yandex_mapkit.dart';
 
 class ItemInfoPage extends StatefulWidget {
   const ItemInfoPage({super.key});
@@ -121,7 +122,8 @@ class _ItemInfoPageState extends State<ItemInfoPage> {
                                   color: Colors.white,
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(100))),
-                              child: const Text('-', textAlign: TextAlign.center),
+                              child:
+                                  const Text('-', textAlign: TextAlign.center),
                             ),
                             const Text(
                               '3',
@@ -135,7 +137,8 @@ class _ItemInfoPageState extends State<ItemInfoPage> {
                                   color: Colors.white,
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(100))),
-                              child: const Text('+', textAlign: TextAlign.center),
+                              child:
+                                  const Text('+', textAlign: TextAlign.center),
                             ),
                           ],
                         ),
@@ -297,7 +300,7 @@ class _ItemInfoPageState extends State<ItemInfoPage> {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(24.0),
-              child: GestureDetector(
+              child: InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, 'map');
                 },

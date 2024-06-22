@@ -5,7 +5,8 @@ import 'package:foodui/main.dart';
 import 'package:foodui/presentation/auth/presentation/sign_in.dart';
 import 'package:foodui/presentation/auth/presentation/sign_up.dart';
 import 'package:foodui/presentation/bottom_app_bar/tab_bar_page.dart';
-import 'package:foodui/presentation/home/map/view/map_view.dart';
+import 'package:foodui/presentation/home/map/view/map_page.dart';
+import 'package:foodui/presentation/home/map/view/map_witget.dart';
 import 'package:foodui/presentation/home/presentation/item_info_page.dart';
 import 'package:foodui/splash_page.dart';
 import 'package:yandex_mapkit/yandex_mapkit.dart';
@@ -18,7 +19,6 @@ class RouteGenerator {
 
   Route? onGenerate(RouteSettings settings) {
     switch (settings.name) {
-
       case 'splash':
         return _navigate(SplashPage());
       case 'signUp':
@@ -27,10 +27,10 @@ class RouteGenerator {
         return _navigate(SignInPage());
       case 'tabbar':
         return _navigate(TabBarPage());
-        case 'itemInfo':
+      case 'itemInfo':
         return _navigate(ItemInfoPage());
-         case 'map':
-        return _navigate(YandexMapWitget());
+      case 'map':
+        return _navigate(MapPage());
 
       default:
     }

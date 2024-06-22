@@ -63,32 +63,29 @@ class _YandexMapWitgetState extends State<YandexMapWitget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
-        YandexMap(
-          onMapCreated: (controller) {
-            mapControllerCompleter.complete(controller);
-          },
-        ),
-        Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            top: 0,
-            child: Icon(
-              Icons.location_on_rounded,
-              color: primaryColor,
-              size: 42,
-            ))
-      ],
+        children: [
+          SizedBox(
+            child: YandexMap(
+              onMapCreated: (controller) {
+                mapControllerCompleter.complete(controller);
+              },
+            ),
+          ),
+        
+          Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              top: 0,
+              child: Icon(
+                Icons.location_on_rounded,
+                color: primaryColor,
+                size: 42,
+              )),
+              Positioned.fill(child: GestureDetector( onTap: (){ Navigator.pushNamed(context, 'map');},) )
+        ],
+      
     );
-    //   floatingActionButton:
-    //   FloatingActionButton(
-    //     onPressed: () {
-    //       _fetchCurrentLocation();
-    //     },
-    //     backgroundColor: Colors.white,
-    //     child: Icon(Icons.my_location_outlined),
-    //   );
-    // }
+    
   }
 }
